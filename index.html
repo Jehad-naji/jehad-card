@@ -35,6 +35,13 @@ display:flex;align-items:center;gap:14px;background:linear-gradient(90deg,rgba(2
 .footer{margin-top:24px;padding-top:17px;border-top:1px solid rgba(232,170,37,.7);display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
 .value{font-size:11px;color:#dfe9e3}.value b{display:block;color:#f0b438;font-size:12px;margin-bottom:4px}
 @media(max-width:430px){h1{font-size:34px}.hero img{min-height:235px;object-fit:cover}.grid{gap:8px}.btn{padding:10px 8px}.ico{width:38px;height:38px;flex-basis:38px}.txt strong{font-size:14px}.txt span{font-size:11px}}
+
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:99;align-items:center;justify-content:center;padding:22px}
+.modalbox{position:relative;width:min(92vw,420px);background:#fff;color:#163d2e;border-radius:22px;padding:22px;text-align:center;box-shadow:0 20px 60px #0008}
+.modalbox h2{margin:4px 0 8px;color:#064b37}.modalbox p{margin:0 0 15px;color:#555}
+.modalbox img{width:100%;max-width:320px;border-radius:14px}
+.close{position:absolute;right:12px;top:10px;border:0;background:#eee;width:34px;height:34px;border-radius:50%;font-size:22px;cursor:pointer}
+
 </style>
 </head>
 <body><div class="page">
@@ -53,7 +60,7 @@ display:flex;align-items:center;gap:14px;background:linear-gradient(90deg,rgba(2
 <a class="btn" href="mailto:Production2@rema.sa"><span class="ico orange">✉</span><span class="txt"><strong>Email</strong><span>Production2@rema.sa</span></span></a>
 <a class="btn" target="_blank" href="https://www.linkedin.com/in/jehad-naji-b18760322/"><span class="ico blue">in</span><span class="txt"><strong>LinkedIn</strong><span>Jehad Naji</span></span></a>
 <a class="btn" href="sms:+966531694361"><span class="ico gold">•••</span><span class="txt"><strong>Message</strong><span>Send SMS</span></span></a>
-<a class="btn" href="https://wa.me/966531694361"><span class="ico green">✓</span><span class="txt"><strong>Connect</strong><span>Open WhatsApp</span></span></a>
+<button class="btn" type="button" onclick="document.getElementById('wechatModal').style.display='flex'" style="width:100%;cursor:pointer;font:inherit"><span class="ico green">微</span><span class="txt"><strong>WeChat</strong><span>Show my QR code</span></span></button>
 </div>
 <a class="save" href="jehad-naji.vcf" download><span class="ico">👤</span><span><strong>Save Contact</strong><span>Add my contact to your phone</span></span></a>
 <div class="footer">
@@ -62,4 +69,14 @@ display:flex;align-items:center;gap:14px;background:linear-gradient(90deg,rgba(2
 <div class="value"><b>Reliability</b>Your partner</div>
 <div class="value"><b>Sustainability</b>Better future</div>
 </div>
-</div></div></body></html>
+</div></div>
+<div id="wechatModal" class="modal" onclick="if(event.target===this)this.style.display='none'">
+  <div class="modalbox">
+    <button class="close" type="button" onclick="document.getElementById('wechatModal').style.display='none'">×</button>
+    <h2>WeChat</h2>
+    <p>Scan the QR code to add Jehad Naji</p>
+    <img src="wechat-qr.jpeg" alt="Jehad Naji WeChat QR code">
+  </div>
+</div>
+
+</body></html>
